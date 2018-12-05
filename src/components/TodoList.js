@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 import TodoInput from './TodoInput'
 import Todos from './Todos'
-import { connect } from "react-redux";
 
-class TodoList extends Component {
+export default class TodoList extends Component {
 
   render() {
     return (
@@ -14,11 +13,3 @@ class TodoList extends Component {
     )
   }
 }
-
-const mapStateToProps = state => ({
-  todos: state.todos
-});
-
-connect(mapStateToProps)(TodoList)
-
-export default connect(mapStateToProps)(TodoList)
