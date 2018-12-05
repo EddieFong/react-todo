@@ -9,6 +9,7 @@ export default class TodoInput extends Component {
   }
 
   render() {
+    this.props.getAllTodo()
     return (
       <div>
         <input ref="input"/>

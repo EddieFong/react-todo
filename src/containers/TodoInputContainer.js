@@ -36,6 +36,16 @@ const mapDispatchToProps2 = (dispatch) => {
           })
         })
 
+    },
+    getAllTodo: () => {
+      fetch("http://localhost:8080/api/todos", {mode: 'cors'})
+        .then(res => res.json())
+        .then(res => 
+          dispatch({
+          type: "addNewTodo_type",
+          payload: res._embedded.todos
+        }))
+        // res => console.log(res._embedded.todos))
     }
   }
 }

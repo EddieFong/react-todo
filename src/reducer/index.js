@@ -9,6 +9,10 @@ export default (state = initialState, { type, payload }) => {
         case "addNewTodo_type": {
             return { ...state, todos: state.todos.concat(payload) }
         }
+        case "add_all_todo":{
+            newTodos = payload
+            return {...state, todos: newTodos}
+        }
         case "UPDATE_STATUS":
             let newTodos = state.todos.map(item => {
                 if (item.id === payload.id) {
