@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import TodoInput from './TodoInput'
 import Todos from './Todos'
+import { connect } from "react-redux";
 
-export default class TodoList extends Component {
+class TodoList extends Component {
   state = {todos: []}
   addNewTodo = newTodo => {
     this.state.todos.push(newTodo)
@@ -17,3 +18,13 @@ export default class TodoList extends Component {
     )
   }
 }
+
+
+const mapStateToProps = state => ({
+  // counterSum: state.counterSum,
+  // counterItems: state.counterItems
+}); 
+
+connect(mapStateToProps)(TodoList)
+
+export default connect(mapStateToProps)(TodoList);//let CounterGroup and Redux know each other
