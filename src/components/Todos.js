@@ -6,7 +6,8 @@ class Todos extends Component {
     const todos = this.props.todos
     return (
       <div>
-        {todos.map((todo, i) => <li key={i}>{todo}</li>)}
+        {todos.map((todo, i) => <li key={i}>{todo.content}
+        </li>)}
       </div>
     )
   }
