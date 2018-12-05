@@ -1,14 +1,14 @@
 import TodoInput from '../components/TodoInput';
 import { connect } from "react-redux";
 
-const mapDispatchToProps = {
-  addNewTodo: (newTodo) => {
-    return {
-      type: "addNewTodo_type",
-      payload: newTodo
-    }
-  }
-}
+// const mapDispatchToProps = {
+//   addNewTodo: (newTodo) => {
+//     return {
+//       type: "addNewTodo_type",
+//       payload: newTodo
+//     }
+//   }
+// }
 
 const mapDispatchToProps2 = (dispatch) => {
   return {
