@@ -10,7 +10,7 @@ class TodoInput extends Component {
     });
   }
 
-  dispatch = () => {
+  onclickFunction = () => {
     const { input } = this.refs
     this.addNewTodo(input.value)
     input.value = ''
@@ -19,14 +19,13 @@ class TodoInput extends Component {
   render() {
     return (
       <div>
-        <input ref="input" />
-        <button onClick={this.dispatch}>add</button>
+        <input ref="input"/>
+        <button onClick={this.onclickFunction}>add</button>
       </div>
     )
   }
 
 }
-
 
 export default connect(null)(TodoInput);
 
