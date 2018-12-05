@@ -1,16 +1,18 @@
 
 const initialState = {
     // counterSum: 0,
-    // counterItems: []
-  };
-  
-  export default (state = initialState, { type, payload }) => {
+    todos: []
+};
+
+export default (state = initialState, { type, payload }) => {
     switch (type) {
-      case "COUNTERSUM":
-        return { ...state, counterSum: state.counterSum + payload }
-      default:
-        return state
+        case "addNewTodo": {
+            return { ...state, todos: state.todos.concat(payload) }
+        }
+
+        default: {
+            return state
+        }
     }
-  };
-  
-  
+};
+

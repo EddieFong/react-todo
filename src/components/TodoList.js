@@ -4,16 +4,21 @@ import Todos from './Todos'
 import { connect } from "react-redux";
 
 class TodoList extends Component {
-  state = {todos: []}
+  // state = {todos: []}
   addNewTodo = newTodo => {
-    this.state.todos.push(newTodo)
-    this.setState({todos: this.state.todos})
+    // this.state.todos.push(newTodo)
+    // this.setState({todos: this.state.todos})
+    this.props.dispatch({ //this dispatch will wuto inject by connect() method
+      type: "addNewTodo",
+      payload: newTodo
+    });
+
   }
   render() {
-    return (
+      return (
       <div>
         <TodoInput onNewTodoAdded={this.addNewTodo}/>
-        <Todos todos={this.state.todos}/>
+        <Todos todos={this.props.todos}/>
       </div>
     )
   }
@@ -21,8 +26,7 @@ class TodoList extends Component {
 
 
 const mapStateToProps = state => ({
-  // counterSum: state.counterSum,
-  // counterItems: state.counterItems
+  todos: state.todos
 }); 
 
 connect(mapStateToProps)(TodoList)
