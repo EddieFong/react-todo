@@ -45,7 +45,7 @@ const mapDispatchToProps2 = (dispatch) => {
         .then(res => res.json())
         .then(res => 
           dispatch({
-          type: "add_all_todo",
+          type: "initLoad_type",
           payload: res._embedded.todos
         }))
     }

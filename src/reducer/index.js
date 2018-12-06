@@ -9,7 +9,7 @@ export default (state = initialState, { type, payload }) => {
         case "addNewTodo_type": {
             return { ...state, todos: state.todos.concat(payload) }
         }
-        case "add_all_todo":{
+        case "initLoad_type":{
             newTodos = payload
             return {todos: newTodos}
         }

@@ -9,8 +9,8 @@ export default class TodoInput extends Component {
   }
 
   onclickCheckBoxFunction = () => {
-    let temp = this.refs.active_only.checked
-    this.props.getAllTodo(temp)
+    let checked = this.refs.active_only.checked
+    this.props.getAllTodo(checked)
   }
 
   render() {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from "react-redux";
-class Todo extends Component {
-    toggleItem = () => {
+export default class Todo extends Component {
+toggleItem = () => {
         const originTodo = this.props.todo;
         let newStatus = (originTodo.status === "active") ? "completed" : "active"
 
@@ -34,13 +34,4 @@ class Todo extends Component {
         )
     }
 }
-const mapDispatchToProps = dispatch => ({
-    changeStatusFunction: todoItem => {
-        dispatch({
-            type: "UPDATE_STATUS",
-            payload: todoItem
-        });
-    }
-});
-connect(null, mapDispatchToProps)(Todo)
-export default connect(null, mapDispatchToProps)(Todo) 
+
