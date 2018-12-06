@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { connect } from "react-redux";
 export default class Todo extends Component {
 toggleItem = () => {
         const originTodo = this.props.todo;
