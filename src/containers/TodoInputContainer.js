@@ -37,12 +37,22 @@ const mapDispatchToProps2 = (dispatch) => {
         })
 
     },
-    getAllTodo: () => {
-      fetch("http://localhost:8080/api/todos", {mode: 'cors'})
+    getAllTodo: (ActiveOnly) => {
+      // let link = (ActiveOnly === "on") ? 
+      // "http://localhost:8080/api/todos/search/statusOfTodos?status=active" :
+      // "http://localhost:8080/api/todos"
+
+      let link = "http://localhost:8080/api/todos"
+      if (ActiveOnly === "on") {
+        // alert("on")
+        link = "http://localhost:8080/api/todos/search/statusOfTodos?status=active"
+      }
+      // link = "http://localhost:8080/api/todos/search/statusOfTodos?status=active"
+      fetch(link, {mode: 'cors'})
         .then(res => res.json())
         .then(res => 
           dispatch({
-          type: "addNewTodo_type",
+          type: "add_all_todo",
           payload: res._embedded.todos
         }))
         // res => console.log(res._embedded.todos))
