@@ -9,17 +9,19 @@ export default class TodoInput extends Component {
   }
 
   onclickCheckBoxFunction = () => {
-    let checked = this.refs.active_only.checked
-    this.props.getAllTodo(checked)
+    let checkedActive = this.refs.show_active.checked
+    let checkedComplete = this.refs.show_complete.checked
+    this.props.getAllTodo(checkedActive, checkedComplete)
   }
 
   render() {
-    this.props.getAllTodo(false)
+    this.props.getAllTodo(true, true)
     return (
       <div>
         <input ref="input"/>
         <button onClick={this.onclickFunction}>add</button>
-        <input type="checkbox" ref="active_only" onClick={this.onclickCheckBoxFunction}/> Active only
+        <input type="checkbox" ref="show_active" onClick={this.onclickCheckBoxFunction}/> Show Active
+        <input type="checkbox" ref="show_complete" onClick={this.onclickCheckBoxFunction}/> Show Complete
       </div>
     )
   }

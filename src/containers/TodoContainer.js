@@ -5,7 +5,7 @@ import Todo from "../components/Todo"
 const mapDispatchToProps = dispatch => ({
     changeStatusFunction: todoItem => {
         dispatch({
-            type: "UPDATE_STATUS",
+            type: "ChangeStatus_type",
             payload: todoItem
         });
     }

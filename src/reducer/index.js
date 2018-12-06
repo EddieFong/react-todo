@@ -13,7 +13,7 @@ export default (state = initialState, { type, payload }) => {
             newTodos = payload
             return {todos: newTodos}
         }
-        case "UPDATE_STATUS":
+        case "ChangeStatus_type":
             let newTodos = state.todos.map(item => {
                 if (item.id === payload.id) {
                     return { id: payload.id, content: payload.content, status: payload.status };

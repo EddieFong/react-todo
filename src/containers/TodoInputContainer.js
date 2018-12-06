@@ -37,9 +37,10 @@ const mapDispatchToProps2 = (dispatch) => {
         })
 
     },
-    getAllTodo: (ActiveOnly) => {
+    getAllTodo: (showActive, showComplete) => {
       
-      let link = "http://localhost:8080/api/todos/search/statusOfTodos?status=active" + ((ActiveOnly === true) ? "" : ",completed")
+      let link = "http://localhost:8080/api/todos/search/statusOfTodos?status=" + ((showActive === true) ? "active," : "")
+      link += ((showComplete === true) ? "completed," : "")
       
       fetch(link, {mode: 'cors'})
         .then(res => res.json())
