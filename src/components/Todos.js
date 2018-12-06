@@ -18,15 +18,6 @@ const mapStateToProps = state => ({
   todos: state.todos
 });
 
-const mapDispatchToProps = dispatch => ({
-  fetchAllTodo: () => {
-      dispatch({
-          type: "FETCH_ALL_TODO",
-          payload: null
-      });
-  }
-});
-
-connect(mapStateToProps, mapDispatchToProps)(Todos)
+connect(mapStateToProps)(Todos)
 
 export default connect(mapStateToProps)(Todos);

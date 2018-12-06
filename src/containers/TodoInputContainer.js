@@ -48,7 +48,6 @@ const mapDispatchToProps2 = (dispatch) => {
           type: "add_all_todo",
           payload: res._embedded.todos
         }))
-        // res => console.log(res._embedded.todos))
     }
   }
 }
