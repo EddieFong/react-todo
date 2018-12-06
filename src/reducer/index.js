@@ -11,7 +11,7 @@ export default (state = initialState, { type, payload }) => {
         }
         case "add_all_todo":{
             newTodos = payload
-            return {...state, todos: newTodos}
+            return {todos: newTodos}
         }
         case "UPDATE_STATUS":
             let newTodos = state.todos.map(item => {
