@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import TodoInputContainer from './TodoInputContainer'
-import Todos from '../components/Todos'
+import TodosContainer from './TodosContainer'
 
 export default class TodoListContainer extends Component {
 
@@ -8,7 +8,7 @@ export default class TodoListContainer extends Component {
     return (
       <div>
         <TodoInputContainer/>
-        <Todos/>
+        <TodosContainer/>
       </div>
     )
   }
