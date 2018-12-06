@@ -6,6 +6,8 @@ export default class TodoInput extends Component {
     const { input } = this.refs
     this.props.addNewTodo(input.value)
     input.value = ''
+
+    this.onclickCheckBoxFunction()
   }
 
   onclickCheckBoxFunction = () => {
