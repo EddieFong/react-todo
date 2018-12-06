@@ -20,8 +20,8 @@ export default class TodoInput extends Component {
       <div>
         <input ref="input"/>
         <button onClick={this.onclickFunction}>add</button>
-        <input type="checkbox" ref="show_active" onClick={this.onclickCheckBoxFunction}/> Show Active
-        <input type="checkbox" ref="show_complete" onClick={this.onclickCheckBoxFunction}/> Show Complete
+        <input type="checkbox" ref="show_active" onClick={this.onclickCheckBoxFunction} defaultChecked={true}/> Show Active
+        <input type="checkbox" ref="show_complete" onClick={this.onclickCheckBoxFunction} defaultChecked={true}/> Show Complete
       </div>
     )
   }
